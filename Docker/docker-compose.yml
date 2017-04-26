@@ -18,7 +18,7 @@ services:
         ports:
             - 60002:80
         links:
-            - database:db
+            - croman_database:db
         environment:
             - PMA_USER=root
             - PMA_PASSWORD=root
@@ -29,7 +29,7 @@ services:
             - "/xxx/xxx/CROMADockerSilex/Silex:/var/www/html"
     croman_web:
         container_name: web
-        image: cromans/apache:2.4
+        image: croman/apache:2.4
         ports:
             - 60000:80
         environment:
@@ -38,5 +38,5 @@ services:
         volumes:
             - "/xxx/xxx/CROMADockerSilex/Logs/Apache2:/var/log/apache2"
         links:
-            - database
-            - php
+            - croman_database
+            - croman_php
