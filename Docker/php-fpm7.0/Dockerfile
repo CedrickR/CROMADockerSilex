@@ -1,6 +1,6 @@
 FROM ubuntu:16.10
 
-MAINTAINER Christophe Meneses
+MAINTAINER Cédrick Roman
 
 # Installation PHP + extensions
 RUN apt-get update && apt-get install -y \

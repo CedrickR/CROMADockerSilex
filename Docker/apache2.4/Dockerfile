@@ -1,6 +1,6 @@
 FROM ubuntu:16.10
 
-MAINTAINER Christophe Meneses
+MAINTAINER Cédrick Roman
 
 RUN apt-get update && apt-get install -y apache2
 RUN a2enmod proxy_fcgi
