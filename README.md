@@ -25,14 +25,12 @@ You must modify volumes for `croman_database` , `croman_php` and `croman_web` co
             - "/xxx/xxx/CROMADockerSilex/Data:/var/lib/mysql"
     croman_php:
         container_name: croman_php
-        ...
-        volumes:
-            - "/xxx/xxx/CROMADockerSilex/Silex:/var/www/html"
     croman_web:
         container_name: croman_web
         ...
         volumes:
             - "/xxx/xxx/CROMADockerSilex/Logs/Apache2:/var/log/apache2"
+            - "/xxx/xxx/CROMADockerSilex/Silex:/var/www/html"
 ```
 
 3 : Run the application
@@ -57,7 +55,15 @@ PHPMyAdmin : [app.local:60002](http://app.local:60002)
 
 MySQL : [app.local:3306](http://app.local:3306) and hostname : croman_database
 
-5 : Stop the application
+
+5 : Launch composer
+-----------------------------
+```bash
+$ docker exec -ti web /bin/bash
+$ composer install
+```
+
+6 : Stop the application
 -----------------------------
 In Symfony directory, run the command :
 ```bash
